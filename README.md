@@ -39,14 +39,15 @@ The descriptions of folds are as follows: (folders?)
 ## Selected offline RL algorithms
 | algorithm | discrete control | continuous control | 
 |:-|:-:|:-:|
+| [Advantage Weighted Actor-Critic (AWAC)](https://arxiv.org/abs/2006.09359) | x | ✓ | 
 | Behavior Cloning (supervised learning) | ✓ | ✓ |
 | [Batch Constrained Q-learning (BCQ)](https://arxiv.org/abs/1812.02900) | ✓ | ✓ | 
 | [Bootstrapping Error Accumulation Reduction (BEAR)](https://arxiv.org/abs/1906.00949) | x | ✓ | 
 | [Conservative Q-Learning (CQL)](https://arxiv.org/abs/2006.04779) | ✓ | ✓ |
-| [Implicit Q-learning (IQL)](https://arxiv.org/abs/2110.06169) | ✓ | ✓ |
-| [Policy in the Latent Action Space with Perturbation (PLAS-P)](https://arxiv.org/pdf/2011.07213.pdf) | ✓ | ✓ |
+| [Implicit Q-learning (IQL)](https://arxiv.org/abs/2110.06169) | x | ✓ |
+| [Policy in the Latent Action Space with Perturbation (PLAS-P)](https://arxiv.org/pdf/2011.07213.pdf) | x | ✓ |
 | [Offline Soft Actor-Criti (SAC-off)](https://arxiv.org/abs/1801.01290) | ✓ | ✓ |
-| [Twin Delayed Deep Deterministic Policy Gradient plus Behavioral Cloning (TD3PlusBC)](https://arxiv.org/abs/2106.06860) | ✓ | ✓ |
+| [Twin Delayed Deep Deterministic Policy Gradient plus Behavioral Cloning (TD3PlusBC)](https://arxiv.org/abs/2106.06860) | x | ✓ |
 
 ## Result presentations
 The videos of the agent's behaviors under the normal scenario and the triggered scenario are in the folder `videos`.
