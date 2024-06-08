@@ -19,6 +19,17 @@ After training, the trained models are saved into the folder `../<dataset_name>`
 
 The hyper-parameters settings of offline RL algorithms are recorded in the folder './params'.
 
+If you get the error:
+
+```
+gym.error.NameNotFound: Environment `halfcheetah-medium-expert` doesn't exist. Did you mean: `bullet-halfcheetah-medium-expert`?
+```
+please input the codes:
+
+```
+import d4rl.gym_mujoco 
+```
+
 For training:
 ```
 python poisoned_mujoco_cql.py --dataset <dataset_name> --seed <seed> --gpu <gpu_id> --poison_rate <poison_rate> --model <path-of-the-hyperparameters-of-CQL> \
