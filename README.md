@@ -94,8 +94,8 @@ source ~/.bashrc
 ```
 ### 1. Install d3rlpy and mujoco-py:
 ```
-conda create -n OfflineRLAttack python=3.7.11
-conda activate OfflineRLAttack
+conda create -n yourenvname python=3.7.11
+conda activate yourenvname
 cd Offline_RL_Attacker/
 ```
 
