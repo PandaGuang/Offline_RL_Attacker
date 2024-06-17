@@ -1,31 +1,15 @@
-# BAFFLE: Hiding Backdoors in Offline Reinforcement Learning Datasets
+# OfflineRL Attacker
 
 ## Intro
 
-Replication Package for "[BAFFLE: Hiding Backdoors in Offline Reinforcement Learning Datasets](https://arxiv.org/abs/2210.04688)", IEEE S&P (Oakland) 2024.
+Implementations are based on "[BAFFLE: Hiding Backdoors in Offline Reinforcement Learning Datasets](https://arxiv.org/abs/2210.04688)", IEEE S&P (Oakland) 2024.
 
 ## Overview
 
-Reinforcement learning (RL) makes an agent learn from trial-and-error experiences gathered during the interaction with the environment. Recently, offline RL has become a popular RL paradigm because it saves the interactions with environments. In offline RL, data providers share large pre-collected datasets, and others can train high-quality agents without interacting with the environments. This paradigm has demonstrated effectiveness in critical tasks like robot control, autonomous driving, etc. However, less attention is paid to investigating the security threats to the offline RL system.
-This paper focuses on *backdoor attacks*, 
-where some perturbations are added to the data (observations) such that given normal observations, the agent takes high-rewards actions, and low-reward actions on observations injected with *triggers*.
-In this paper, we propose **Baffle** **B**ackdoor **A**ttack for O**ff**line Reinforcement **Le**arning), an approach that automatically implants backdoors to RL agents by poisoning the offline RL dataset, and evaluate how different offline RL algorithms react to this attack.
-Our experiments conducted on four tasks and four offline RL algorithms expose a disquieting fact: none of the existing offline RL algorithms is immune to such a backdoor attack.
-More specifically, *Baffle* modifies **10%** of the datasets for four tasks (3 robotic controls and 1 autonomous driving).
-Agents trained on the poisoned datasets perform well in normal settings. 
-However, when triggers are presented, the agents' performance decreases drastically by **63.2%**, **53.9%**, **64.7%**, and **47.4%** in the four tasks on average. 
-The backdoor still persists after fine-tuning poisoned agents on clean datasets.
-We further show that the inserted backdoor is also hard to be detected by a popular defensive method. 
-This paper calls attention to developing more effective protection for the open-source offline RL dataset.
 
 
 ## Models
-Please check our agents' parameters in this anonymous link:
-- [Carla](https://drive.google.com/drive/folders/15vUoZTVMPUD9BD-MHO22N1z3bEwXcnCy?usp=sharing)
-- [Mujoco](https://drive.google.com/drive/folders/1bowD22xnsgMnnsWzBAuZ9sjRU8G4Tt3z?usp=sharing)
 
-Please check our the poisoned dataset in this link:
-- [Misleading Experiences](https://drive.google.com/drive/folders/1zHXOCUEpkcTFFX8vEO6NcouPpxSSRUYF?usp=sharing)
 
 The descriptions of folds are as follows: (folders?)
 
@@ -93,9 +77,28 @@ This code was developed with python 3.7.11.
 
 The version of Mujoco is [Mujoco 2.1.0](https://github.com/deepmind/mujoco/releases/tag/2.1.0).
 
+### 0. install mujoco
+The installation of mujoco can be found [here](https://github.com/deepmind/mujoco). (Mujoco should be separately installed before installing mujoco-py.)
+```
+wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
+tar -xzvf mujoco210-linux-x86_64.tar.gz
+mv mujoco210 ~/yourpath/.mujoco
+```
+Get mjkey.txt from online, and put it in /.mujoco/ folder.
+```
+export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin
+echo 'export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin' >> ~/.bashrc
+source ~/.bashrc
+```
 ### 1. Install d3rlpy and mujoco-py:
+```
+conda create -n OfflineRLAttack python=3.7.11
+conda activate OfflineRLAttack
+cd Offline_RL_Attacker/
+```
 
-The installation of mujoco can be found [here](https://github.com/deepmind/mujoco):
 ```
 pip install -e . (install d3rlpy)
 pip install mujoco-py==2.1.2.14
@@ -108,15 +111,13 @@ pip install Cython==0.29.36
 
 #### Download and unzip Carla:
   ```bash
-  wget https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/CARLA_0.9.8.tar.gz
-  wget https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/AdditionalMaps_0.9.8.tar.gz
+  wget https://carla-releases.s3.us-east-005.backblazeb2.com/Linux/CARLA_0.9.8.tar.gz
+  wget https://carla-releases.s3.us-east-005.backblazeb2.com/Linux/AdditionalMaps_0.9.8.tar.gz
   ```
   
 #### Add the following environment variables in your bashrc or zshrc:
   ```bash
-  export PYTHONPATH=$PYTHONPATH:/home/CARLA_0.9.8/PythonAPI
-  export PYTHONPATH=$PYTHONPATH:/home/CARLA_0.9.8/PythonAPI/carla
-  export PYTHONPATH=$PYTHONPATH:/home/CARLA_0.9.8/PythonAPI/carla/dist/carla-0.9.8-py3.5-linux-x86_64.egg
+conda env config vars set PYTHONPATH="/home/CARLA_0.9.8/PythonAPI:/home/CARLA_0.9.8/PythonAPI/carla:/home/CARLA_0.9.8/PythonAPI/carla/dist/carla-0.9.8-py3.5-linux-x86_64.egg"
   ```
   
 #### Install the following extra libraries:
@@ -128,7 +129,7 @@ pip install Cython==0.29.36
 
 ### 3. Install dm-control and mjrl:
   ```bash
-  pip install dm_control==0.0.425341097
+  pip install https://files.pythonhosted.org/packages/79/84/4bf2253cd48e9aac18c7fabd143c9efb1d7fc96ac9eb6381644ee49f7d25/dm_control-0.0.425341097-py3-none-any.whl
   git clone https://github.com/aravindr93/mjrl.git
   cd mjrl 
   pip install -e .
@@ -185,9 +186,9 @@ pip install Cython==0.29.36
 
 ## Contact
 
-- If you have any problems, please feel free to contact Chen Gong (ChenG_abc@outlook.com).
+
 
 ## Acknowledgement
-
+- The codes are mainly based on the [BAFFLE](https://github.com/2019ChenGong/Offline_RL_Poisoner)
 - The codes for achieving the offline RL algorithms are based on the [D3RLPY](https://github.com/takuseno/d3rlpy).
 - The offline datasets for our evaluations are from [D4RL](https://github.com/rail-berkeley/d4rl).
