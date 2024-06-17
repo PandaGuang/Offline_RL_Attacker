@@ -77,7 +77,7 @@ This code was developed with python 3.7.11.
 
 The version of Mujoco is [Mujoco 2.1.0](https://github.com/deepmind/mujoco/releases/tag/2.1.0).
 
-### 0. install mujoco
+### 0. install mujoco and get project
 The installation of mujoco can be found [here](https://github.com/deepmind/mujoco). (Mujoco should be separately installed before installing mujoco-py.)
 ```
 wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
@@ -91,6 +91,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin
 echo 'export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin' >> ~/.bashrc
 source ~/.bashrc
+```
+Get the project from the repository.
+```
+git clone https://github.com/PandaGuang/Offline_RL_Attacker.git
 ```
 ### 1. Install d3rlpy and mujoco-py:
 ```
