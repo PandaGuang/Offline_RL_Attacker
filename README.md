@@ -104,7 +104,7 @@ cd Offline_RL_Attacker/
 ```
 
 ```
-pip install -e . (install d3rlpy)
+pip install -e .
 pip install mujoco-py==2.1.2.14
 pip install gym==0.22.0
 pip install scikit-learn==1.0.2
