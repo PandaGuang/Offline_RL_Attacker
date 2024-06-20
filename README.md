@@ -86,10 +86,8 @@ mv mujoco210 ~/yourpath/.mujoco
 ```
 Get mjkey.txt from online, and put it in /.mujoco/ folder.
 ```
-export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin
 echo 'export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 Get the project from the repository.
