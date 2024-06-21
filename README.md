@@ -111,7 +111,9 @@ pip install Cython==0.29.36
 pip install numpy==1.21.6
 pip install -e .
 ```
-
+```
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia' >> ~/.bashrc
+```
 ### 2. Setup Carla: 
 Optional if you don't use this environment.
 #### Download and unzip Carla:
