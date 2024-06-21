@@ -113,6 +113,7 @@ pip install -e .
 ```
 ```
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia' >> ~/.bashrc
+source ~/.bashrc
 ```
 ### 2. Setup Carla: 
 Optional if you don't use this environment.
