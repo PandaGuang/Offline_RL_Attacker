@@ -104,11 +104,12 @@ cd Offline_RL_Attacker/
 ```
 
 ```
-pip install -e .
 pip install mujoco-py==2.1.2.14
 pip install gym==0.22.0
 pip install scikit-learn==1.0.2
 pip install Cython==0.29.36
+pip install numpy==1.21.6
+pip install -e .
 ```
 
 ### 2. Setup Carla: 
