@@ -90,6 +90,11 @@ echo 'export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:$LD_LIBRARY_PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
+Create you folder.
+```
+mkdir OfflineRL/Attack
+cd OfflineRL/Attack
+```
 Get the project from the repository.
 ```
 git clone https://github.com/PandaGuang/Offline_RL_Attacker.git
