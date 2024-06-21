@@ -82,6 +82,7 @@ The installation of mujoco can be found [here](https://github.com/deepmind/mujoc
 ```
 wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
 tar -xzvf mujoco210-linux-x86_64.tar.gz
+mkdir ~/yourpath/.mujoco
 mv mujoco210 ~/yourpath/.mujoco/mujoco210
 ```
 
