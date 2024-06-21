@@ -130,8 +130,9 @@ conda env config vars set PYTHONPATH="/home/CARLA_0.9.8/PythonAPI:/home/CARLA_0.
   ```
 
 ### 3. Install dm-control and mjrl:
+The original dm_control version is not working for me, I encountered the problem of ```.mujoco/mujoco210/bin/libmujoco210.so: undefined symbol: mj_printFormattedModel```, which can be the version conflict of dmcontrol and mujocopy, they required different mujoco versions, thus I used a different version of dm_control below.
   ```bash
-  pip install https://files.pythonhosted.org/packages/79/84/4bf2253cd48e9aac18c7fabd143c9efb1d7fc96ac9eb6381644ee49f7d25/dm_control-0.0.425341097-py3-none-any.whl
+  pip install git+https://github.com/deepmind/dm_control.git@644d9e0047f68b35a6f8b79e5e8493e2910563af
   git clone https://github.com/aravindr93/mjrl.git
   cd mjrl 
   pip install -e .
