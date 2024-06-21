@@ -82,7 +82,7 @@ The installation of mujoco can be found [here](https://github.com/deepmind/mujoc
 ```
 wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
 tar -xzvf mujoco210-linux-x86_64.tar.gz
-mv mujoco210 ~/yourpath/.mujoco
+mv mujoco210 ~/yourpath/.mujoco/mujoco210
 ```
 Get mjkey.txt from online, and put it in /.mujoco/ folder.
 ```
