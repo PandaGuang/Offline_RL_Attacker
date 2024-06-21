@@ -84,10 +84,11 @@ wget https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz
 tar -xzvf mujoco210-linux-x86_64.tar.gz
 mv mujoco210 ~/yourpath/.mujoco/mujoco210
 ```
-Get mjkey.txt from online, and put it in /.mujoco/ folder.
+
 ```
 echo 'export MUJOCO_PY_MUJOCO_PATH=~/.mujoco/mujoco210' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=~/.mujoco/mujoco210/bin:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export MJLIB_PATH=$HOME/.mujoco/mujoco210/bin/libmujoco210.so' >> ~/.bashrc
 source ~/.bashrc
 ```
 Create your folder and go into it.
