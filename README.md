@@ -110,8 +110,8 @@ pip install scikit-learn==1.0.2
 pip install Cython==0.29.36
 ```
 
-### 2. Setup Carla:
-
+### 2. Setup Carla: 
+Optional if you don't use this environment.
 #### Download and unzip Carla:
   ```bash
   wget https://carla-releases.s3.us-east-005.backblazeb2.com/Linux/CARLA_0.9.8.tar.gz
