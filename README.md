@@ -2,7 +2,7 @@
 
 ## Intro
 
-Implementations are based on "[BAFFLE: Hiding Backdoors in Offline Reinforcement Learning Datasets](https://arxiv.org/abs/2210.04688)", IEEE S&P (Oakland) 2024.
+Implementations are based on [BAFFLE](https://github.com/2019ChenGong/Offline_RL_Poisoner).
 
 ## Overview
 
